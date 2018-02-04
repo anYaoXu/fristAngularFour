@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {EchartsComponent} from "./echarts/echarts.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    children: []
-  }
+  { path: 'echarts', component: EchartsComponent}
 ];
 
 @NgModule({

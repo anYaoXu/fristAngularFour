@@ -5,6 +5,12 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+// import { EchartsComponent } from './echarts/echarts.component';
+// import { AngularEchartsModule } from 'ngx-echarts';
+// import { EchartsComponent } from './echarts/echarts.component';
+import { EchartsModule } from './echarts/echarts.module';
+import {NgxEchartsModule} from 'ngx-echarts';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +20,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxEchartsModule,
+    EchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
