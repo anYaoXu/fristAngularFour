@@ -302,7 +302,7 @@ export class EchartsComponent implements OnInit {
       },
       {
         name: 'Top 5',
-        type: 'effectScatter',
+        type: 'map',
         coordinateSystem: 'geo',
         data: this.datamapvalue,
         symbolSize: function (val) {
