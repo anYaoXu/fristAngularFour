@@ -1,6 +1,11 @@
 //@import "component/_sprite";
+@import "sass/_var";
 .bg{
-  width: 200px;
   height: 200px;
-  background: red;
+  background: $backgroundColor;
+}
+.fonta{
+  font-size: 30px;
+  color: #ffffff;
+  padding-left: 20px;
 }
