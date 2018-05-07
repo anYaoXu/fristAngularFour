@@ -1,0 +1,12 @@
+@import "compass/utilities/sprites";  //yinru jinglingtupian kongjian
+@import "icon/*.png";
+.sprite-base{
+  display:inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  &:focus{
+    outline:none;
+  }
+}
+@include all-icon-sprites;
