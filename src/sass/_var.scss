@@ -5,8 +5,6 @@ $border:1px solid red;
 $btnClass: btn !default;
 $borderDirection: top !default;
 
-.#{$btnClass} {
-  border-#{$borderDirection}: $border;
-  color: green;
-  font-size: 30px;
-}
+
+$boxPadding: 5px !default;
+
