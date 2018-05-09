@@ -1,5 +1,5 @@
 @import "sass/_var";
-//@import "sass/a";
+@import "sass/a";
 .bg{
   height: 200px;
   background: $backgroundColor;
@@ -9,9 +9,4 @@
   color: #ffffff;
   padding-left: 20px;
 }
-//定义变量用在属性上
-.#{$btnClass} {
-  border-#{$borderDirection}: $border;
-  color: green;
-  font-size: 30px;
-}
+

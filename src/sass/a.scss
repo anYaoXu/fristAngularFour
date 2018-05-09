@@ -1,5 +1,14 @@
+//重置默认的变量
+$boxPadding: 50px;
 .a-box{
-  width: 20px;
   height: 20px;
   padding: $boxPadding;
+  border: 1px solid red;
+}
+
+//定义变量用在属性上
+.#{$btnClass} {
+  border-#{$borderDirection}: $border;
+  color: green;
+  font-size: 30px;
 }
