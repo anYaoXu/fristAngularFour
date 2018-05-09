@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'a-sass',
-  templateUrl: './a.html'
+  selector: 'sass-a',
+  templateUrl: './sassA.html'
 })
-export class ASassComponent implements OnInit {
+export class SassAComponent implements OnInit {
 
 
   constructor() {

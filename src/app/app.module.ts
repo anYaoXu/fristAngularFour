@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 // import { EchartsComponent } from './echarts/echarts.component';
 import { EchartsModule } from './echarts/echarts.module';
 import {NgxEchartsModule} from 'ngx-echarts';
-import {SassAModule} from './sass-test/a.module';
+import {HomeModule} from './sass-test/home.module';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import {SassAModule} from './sass-test/a.module';
     AppRoutingModule,
     NgxEchartsModule,
     EchartsModule,
-    SassAModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

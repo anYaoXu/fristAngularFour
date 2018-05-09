@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {EchartsComponent} from './echarts/echarts.component';
-import {ASassComponent} from './sass-test/a.component';
+import {HomeSassComponent} from './sass-test/home.component';
+import {SassAComponent} from './sass-test/sassA/sassA.component';
 
 const routes: Routes = [
   { path: 'echarts', component: EchartsComponent},
-  { path: 'sassA', component: ASassComponent}
+  { path: 'sassHome', component: HomeSassComponent,
+    children: [
+      {
+        path: 'sassA', component: SassAComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

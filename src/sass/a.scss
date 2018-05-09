@@ -2,7 +2,7 @@
 $boxPadding: 50px;
 .a-box{
   height: 20px;
-  padding: $boxPadding;
+  padding: ($boxPadding - 30px) * 2;    //计算
   border: 1px solid red;
 }
 
@@ -12,3 +12,5 @@ $boxPadding: 50px;
   color: green;
   font-size: 30px;
 }
+
+
