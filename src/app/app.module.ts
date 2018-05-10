@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 // import { EchartsComponent } from './echarts/echarts.component';
 import { EchartsModule } from './echarts/echarts.module';
 import {NgxEchartsModule} from 'ngx-echarts';
-import {HomeModule} from './sass-test/home.module';
+import {HomeModule} from './sass/home.module';
 
 
 @NgModule({

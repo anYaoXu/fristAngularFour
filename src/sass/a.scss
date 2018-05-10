@@ -4,6 +4,17 @@ $boxPadding: 50px;
   height: 20px;
   padding: ($boxPadding - 30px) * 2;    //计算
   border: 1px solid red;
+  //嵌套
+  span{
+    display: inline-block;
+    width: 450px;
+    border: 1px solid green;
+    text-align: center;
+    background: {
+      color: gainsboro;
+      size: 100%;
+    };
+  }
 }
 
 //定义变量用在属性上
@@ -14,3 +25,30 @@ $boxPadding: 50px;
 }
 
 
+//继承功能
+.font-big{
+  font-size: 20px;
+}
+.font-bold{
+  font-weight: bold;
+}
+.extend-span{
+  @extend .font-big, .font-bold;
+  display: inline-block;
+  width: 450px;
+  border: 1px solid green;
+  text-align: center;
+}
+
+.extend-span-tow{
+  @extend .extend-span;
+  color: white;
+}
+
+%zhanwei{
+  color:red;
+}
+.extend-span-t{
+  @extend %zhanwei;
+  color: white;
+}

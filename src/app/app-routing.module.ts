@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {EchartsComponent} from './echarts/echarts.component';
-import {HomeSassComponent} from './sass-test/home.component';
-import {SassAComponent} from './sass-test/sassA/sassA.component';
+import {HomeSassComponent} from './sass/home.component';
+import {SassAComponent} from './sass/sassA/sassA.component';
 
 const routes: Routes = [
   { path: 'echarts', component: EchartsComponent},
