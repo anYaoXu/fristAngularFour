@@ -1,18 +1,18 @@
 //重置默认的变量
 $boxPadding: 50px;
-.a-box{
-  height: 20px;
-  padding: ($boxPadding - 30px) * 2;    //计算
+.a-box {
+  padding: ($boxPadding - 30px) * 2; //计算
   border: 1px solid red;
   //嵌套
-  span{
+  span {
     display: inline-block;
     border: 1px solid green;
     text-align: center;
     background: {
       color: gainsboro;
       size: 100%;
-    };
+    }
+  ;
   }
 }
 
@@ -23,15 +23,16 @@ $boxPadding: 50px;
   font-size: 30px;
 }
 
-
 //继承功能
-.font-big{
+.font-big {
   font-size: 20px;
 }
-.font-bold{
+
+.font-bold {
   font-weight: bold;
 }
-.extend-span{
+
+.extend-span {
   @extend .font-big, .font-bold;
   display: inline-block;
   padding: {
@@ -42,15 +43,16 @@ $boxPadding: 50px;
   text-align: center;
 }
 
-.extend-span-tow{
+.extend-span-tow {
   @extend .extend-span;
   color: white;
 }
 
-%zhanwei{
-  color:red;
+%zhanwei {
+  color: red;
 }
-.extend-span-t{
+
+.extend-span-t {
   @extend %zhanwei;
   padding: {
     top: 10px;
@@ -58,4 +60,14 @@ $boxPadding: 50px;
     right: 30px;
     left: 20px;
   }
+}
+
+.btn {
+  display: inline-block;
+  width: 52px;
+  height: 25px;
+  border: 0;
+  background: #f0f0f0 url(/study/image/flash_copy_btn.png);
+  font: 0/0 a;
+  overflow: hidden;
 }
