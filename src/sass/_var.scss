@@ -8,3 +8,20 @@ $borderDirection: top !default;
 
 $boxPadding: 5px !default;
 
+
+
+$color:                #000 !default;
+$color1:                red !default;
+$gray-darker:          lighten($color, 20%) !default;
+$gray-dark:            lighten($color, 40%) !default;
+$gray:                 lighten($color, 60%) !default;
+$gray-light:           lighten($color, 80%) !default;
+$gray-lighter:         lighten($color, 87%) !default;
+$gray-lightest:        lighten($color, 95%) !default;
+
+
+$red-darker:          darken($color1, 20%) !default;
+$red-dark:            darken($color1, 30%) !default;
+$red:                 darken($color1, 40%) !default;
+
+$rgba-color: rgba(#c82858,.65);

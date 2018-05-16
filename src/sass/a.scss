@@ -62,12 +62,51 @@ $boxPadding: 50px;
   }
 }
 
-.btn {
+.color-span{
   display: inline-block;
-  width: 52px;
-  height: 25px;
-  border: 0;
-  background: #f0f0f0 url(/study/image/flash_copy_btn.png);
-  font: 0/0 a;
-  overflow: hidden;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  margin: 0 10px;
+  line-height: 40px;
+  text-align: center;
+}
+.color-div{
+  padding: ($boxPadding - 30px) * 2; //计算
+  border: 1px solid red;
+}
+.color-span:nth-child(0){
+  background-color: $color;
+}
+.color-span:nth-child(1){
+  background-color: $gray-darker;
+}
+.color-span:nth-child(2){
+  background-color: $gray-dark;
+}
+.color-span:nth-child(3){
+  background-color: $gray;
+}
+.color-span:nth-child(4){
+  background-color: $gray-light;
+}
+.color-span:nth-child(5){
+  background-color: $gray-lighter;
+}
+
+
+.color-span:nth-child(6){
+  background-color: $color1;
+}
+.color-span:nth-child(7){
+  background-color: $red-darker;
+}
+.color-span:nth-child(8){
+  background-color: $red-dark;
+}
+.color-span:nth-child(9){
+  background-color: $red;
+}
+.color-span:nth-child(9){
+  background-color: $rgba-color;
 }
