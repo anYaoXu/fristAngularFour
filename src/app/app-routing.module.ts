@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {EchartsComponent} from './echarts/echarts.component';
 import {HomeSassComponent} from './sass/home.component';
 import {SassAComponent} from './sass/sassA/sassA.component';
+import {SassFunctionComponent} from './sass/sassB/sassFunction.component';
 
 const routes: Routes = [
   { path: 'echarts', component: EchartsComponent},
@@ -10,6 +11,9 @@ const routes: Routes = [
     children: [
       {
         path: 'sassA', component: SassAComponent
+      },
+      {
+        path: 'sassFunction', component: SassFunctionComponent
       }
     ]
   }

@@ -3,11 +3,13 @@ import {NgModule} from "@angular/core/src/metadata/ng_module";
 import { HomeSassComponent } from './home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import {SassAModule} from './sassA/sassA.module';
+import {SassFunctionModule} from './sassB/sassFunction.module';
 
 @NgModule({
   imports: [
     AppRoutingModule,
-    SassAModule
+    SassAModule,
+    SassFunctionModule
   ],
   declarations: [HomeSassComponent],
 })
