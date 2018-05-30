@@ -4,6 +4,7 @@ import {EchartsComponent} from './echarts/echarts.component';
 import {HomeSassComponent} from './sass/home.component';
 import {SassAComponent} from './sass/sassA/sassA.component';
 import {SassFunctionComponent} from './sass/sassB/sassFunction.component';
+import {HightChartsComponent} from './hightcharts/hightCharts.component';
 
 const routes: Routes = [
   { path: 'echarts', component: EchartsComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
         path: 'sassFunction', component: SassFunctionComponent
       }
     ]
-  }
+  },
+  { path: 'hCharts', component: HightChartsComponent}
 ];
 
 @NgModule({

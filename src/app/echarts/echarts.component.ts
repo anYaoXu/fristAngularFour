@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-echarts',
@@ -7,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EchartsComponent implements OnInit {
 
-  showloading:boolean = true;
+  showloading: boolean = true;
 
-  constructor() {
-
-    setTimeout(()=> {
+  constructor(public http: Http) {
+    setTimeout(() => {
       this.showloading = false;
     }, 3000);
   }
@@ -299,37 +299,33 @@ export class EchartsComponent implements OnInit {
             color: '#ddb926'
           }
         }
-      },
-      {
-        name: 'Top 5',
-        type: 'map',
-        coordinateSystem: 'geo',
-        data: this.datamapvalue,
-        symbolSize: function (val) {
-          return val[2] / 10;
-        },
-        showEffectOn: 'render',
-        rippleEffect: {
-          brushType: 'stroke'
-        },
-        hoverAnimation: true,
-        label: {
-          normal: {
-            formatter: '{b}',
-            position: 'right',
-            show: true
-          }
-        },
-        itemStyle: {
-          normal: {
-            color: '#f4e925',
-            shadowBlur: 10,
-            shadowColor: '#333'
-          }
-        },
-        zlevel: 1
       }
     ]
-  }
+  };
+
+  /*zMapOption = {
+    title: {
+      text: '浙江省地图',
+      subtext: '',
+      sublink: '',
+      left: 'center'
+    },
+    series: [
+      {
+        name: '浙江省',
+        type: 'map',
+        map: '浙江',
+      }
+    ]
+  };
+  public onChartInit(e: any): void {
+    debugger;
+    console.log(e);
+    // this.myChart = e.init(document.getElementById('echartMap'));
+    this.http.get('../assets/33.json').subscribe(result => {
+      console.log(result);
+      e.registerMap('浙江', result);
+    });
+  }*/
 
 }

@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { EchartsModule } from './echarts/echarts.module';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {HomeModule} from './sass/home.module';
+import {HightChartsModule} from './hightcharts/hightCharts.module';
+
+
 
 
 @NgModule({
@@ -24,7 +27,8 @@ import {HomeModule} from './sass/home.module';
     AppRoutingModule,
     NgxEchartsModule,
     EchartsModule,
-    HomeModule
+    HomeModule,
+    HightChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
