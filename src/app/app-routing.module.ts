@@ -5,6 +5,7 @@ import {HomeSassComponent} from './sass/home.component';
 import {SassAComponent} from './sass/sassA/sassA.component';
 import {SassFunctionComponent} from './sass/sassB/sassFunction.component';
 import {HightChartsComponent} from './hightcharts/hightCharts.component';
+import {NgxBootstrapComponent} from './ngxBootstrap/ngxBootstrap.component';
 
 const routes: Routes = [
   { path: 'echarts', component: EchartsComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'hCharts', component: HightChartsComponent}
+  { path: 'hCharts', component: HightChartsComponent},
+  { path: 'ngxBootstrap', component: NgxBootstrapComponent}
 ];
 
 @NgModule({

@@ -23,8 +23,13 @@ export class EchartsComponent implements OnInit {
     {name: '绍兴市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
     {name: '嘉兴市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
     {name: '湖州市', value: [107.615944, 27.479744, 2], img: 's-success.png'}
-  ]
-
+  ];
+  masterList = ["a","b","c","d","e","f","g","h","i"];
+  items = [];
+  currentPage:number = 1; // # of current page to show
+  itemsPerPage:number = 3; // # of items per page
+  maxSize:number = 3; // max # of page buttons to show at once
+  totalItems:number; // total # of items
 
   constructor(public http: Http, private es: NgxEchartsService) {
     setTimeout(() => {
@@ -91,6 +96,7 @@ export class EchartsComponent implements OnInit {
         }
       };
     });
+
   }
 
   chartOption = {
