@@ -10,9 +10,9 @@ export class NgxBootstrapComponent implements OnInit {
   public items = [];
 
   // Pagination
-  public currentPage: number = 1; // # of current page to show
-  public itemsPerPage: number = 3; // # of items per page
-  public maxSize: number = 3; // max # of page buttons to show at once
+  public currentPage: number = 1; // # of current page to show  现在是第几页
+  public itemsPerPage: number = 2; // # of items per page  每页显示多少条
+  public maxSize: number = 2; // max # of page buttons to show at once
   public totalItems: number; // total # of items
   constructor(public http: Http) {
     this.onPageChange({page: this.currentPage, itemsPerPage: this.itemsPerPage});

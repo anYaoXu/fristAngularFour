@@ -1,9 +1,8 @@
 ngxBootstrap
 <div>
-
+  <div *ngFor="let item of items">{{item}}</div>
   <pagination
     [totalItems]="masterList.length"
-    [(ngModel)]="currentPage"
     (pageChanged)="onPageChange($event)"
     [itemsPerPage]="itemsPerPage"
     [maxSize]="maxSize"
