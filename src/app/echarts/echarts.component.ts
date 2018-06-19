@@ -51,6 +51,11 @@ export class EchartsComponent implements OnInit {
             renderItem: function (params, api) {
               return {
                 type: 'image',
+                position: [-10, -10], // 平移，默认值为 [0, 0]。
+                // scale: [2, 4], // 缩放，默认值为 [1, 1]。表示缩放的倍数。
+                // rotation: Math.PI / 4, // 旋转，默认值为 0。表示旋转的弧度值。正值表示逆时针旋转。
+                // origin: [10, 20], // 旋转和缩放的中心点，默认值为 [0, 0]。
+                //https://www.w3cschool.cn/echarts_tutorial/echarts_tutorial-3u872dym.html
                 style: {
                   image: "../assets/s-success.png",
                   x: api.coord([
