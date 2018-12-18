@@ -1,37 +1,48 @@
-import {Component, OnInit} from '@angular/core';
-import {Http} from '@angular/http';
-import {NgxEchartsService} from "ngx-echarts";
+import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
+import * as echarts from 'echarts';
 @Component({
   selector: 'app-echarts',
   templateUrl: './echarts.component.html',
   styleUrls: ['./echarts.component.css']
 })
 export class EchartsComponent implements OnInit {
-
   showloading: boolean = true;
   public ZheJiangOpt;
   public data = [
-    {name: '丽水市', value: [119.49105224609375, 28.24937385955666, 2], img: 's-success.png'},
-    {name: '杭州市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '温州市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '宁波市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '舟山市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '台州市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '金华市', value: [119.63150024414061, 29.07957590059833, 2], img: 's-success.png'},
-    {name: '衢州市', value: [118.84597778320312, 28.96369333786114, 2], img: 's-success.png'},
-    {name: '绍兴市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '嘉兴市', value: [107.615944, 27.479744, 2], img: 's-success.png'},
-    {name: '湖州市', value: [107.615944, 27.479744, 2], img: 's-success.png'}
+    {
+      name: '丽水市',
+      value: [119.49105224609375, 28.24937385955666, 2],
+      img: 's-success.png'
+    },
+    { name: '杭州市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '温州市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '宁波市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '舟山市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '台州市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    {
+      name: '金华市',
+      value: [119.63150024414061, 29.07957590059833, 2],
+      img: 's-success.png'
+    },
+    {
+      name: '衢州市',
+      value: [118.84597778320312, 28.96369333786114, 2],
+      img: 's-success.png'
+    },
+    { name: '绍兴市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '嘉兴市', value: [107.615944, 27.479744, 2], img: 's-success.png' },
+    { name: '湖州市', value: [107.615944, 27.479744, 2], img: 's-success.png' }
   ];
-  masterList = ["a","b","c","d","e","f","g","h","i"];
+  masterList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
   items = [];
-  currentPage:number = 1; // # of current page to show
-  itemsPerPage:number = 3; // # of items per page
-  maxSize:number = 3; // max # of page buttons to show at once
-  totalItems:number; // total # of items
+  currentPage: number = 1; // # of current page to show
+  itemsPerPage: number = 3; // # of items per page
+  maxSize: number = 3; // max # of page buttons to show at once
+  totalItems: number; // total # of items
 
-  constructor(public http: Http, private es: NgxEchartsService) {
+  constructor(public http: Http) {
     setTimeout(() => {
       this.showloading = false;
     }, 3000);
@@ -41,7 +52,7 @@ export class EchartsComponent implements OnInit {
     let _data = this.data;
 
     this.http.get('../assets/33.json').subscribe(result => {
-      this.es.registerMap('浙江', result['_body']);
+      echarts.registerMap('浙江', result['_body']);
       this.ZheJiangOpt = {
         title: {
           text: '浙江省地图',
@@ -53,7 +64,7 @@ export class EchartsComponent implements OnInit {
           {
             type: 'custom',
             coordinateSystem: 'geo',
-            renderItem: function (params, api) {
+            renderItem: function(params, api) {
               return {
                 type: 'image',
                 position: [-10, -10], // 平移，默认值为 [0, 0]。
@@ -62,14 +73,14 @@ export class EchartsComponent implements OnInit {
                 // origin: [10, 20], // 旋转和缩放的中心点，默认值为 [0, 0]。
                 //https://www.w3cschool.cn/echarts_tutorial/echarts_tutorial-3u872dym.html
                 style: {
-                  image: "../assets/s-success.png",
+                  image: '../assets/s-success.png',
                   x: api.coord([
-                    _data[params.dataIndex].value[0], _data[params.dataIndex]
-                      .value[1]
+                    _data[params.dataIndex].value[0],
+                    _data[params.dataIndex].value[1]
                   ])[0],
                   y: api.coord([
-                    _data[params.dataIndex].value[0], _data[params.dataIndex]
-                      .value[1]
+                    _data[params.dataIndex].value[0],
+                    _data[params.dataIndex].value[1]
                   ])[1]
                 }
               };
@@ -83,7 +94,7 @@ export class EchartsComponent implements OnInit {
           zoom: 1,
           itemStyle: {
             normal: {
-              label: {show: true},
+              label: { show: true }
               // borderColor: '#387ba7',
               // shadowColor: 'rgba(0, 0, 0, 0.5)',
               // shadowBlur: 10,
@@ -96,7 +107,6 @@ export class EchartsComponent implements OnInit {
         }
       };
     });
-
   }
 
   chartOption = {
@@ -137,28 +147,28 @@ export class EchartsComponent implements OnInit {
         name: '邮件营销',
         type: 'line',
         stack: '总量',
-        areaStyle: {normal: {}},
+        areaStyle: { normal: {} },
         data: [120, 132, 101, 134, 90, 230, 210]
       },
       {
         name: '联盟广告',
         type: 'line',
         stack: '总量',
-        areaStyle: {normal: {}},
+        areaStyle: { normal: {} },
         data: [220, 182, 191, 234, 290, 330, 310]
       },
       {
         name: '视频广告',
         type: 'line',
         stack: '总量',
-        areaStyle: {normal: {}},
+        areaStyle: { normal: {} },
         data: [150, 232, 201, 154, 190, 330, 410]
       },
       {
         name: '直接访问',
         type: 'line',
         stack: '总量',
-        areaStyle: {normal: {}},
+        areaStyle: { normal: {} },
         data: [320, 332, 301, 334, 390, 330, 320]
       },
       {
@@ -171,21 +181,32 @@ export class EchartsComponent implements OnInit {
             position: 'top'
           }
         },
-        areaStyle: {normal: {}},
+        areaStyle: { normal: {} },
         data: [820, 932, 901, 934, 1290, 1330, 1320]
       }
     ]
-  }
+  };
 
   Baroptions = {
     tooltip: {
       trigger: 'item',
-      formatter: "{a} <br/>{b}: {c} ({d}%)"
+      formatter: '{a} <br/>{b}: {c} ({d}%)'
     },
     legend: {
       orient: 'vertical',
       x: 'left',
-      data: ['直达', '营销广告', '搜索引擎', '邮件营销', '联盟广告', '视频广告', '百度', '谷歌', '必应', '其他']
+      data: [
+        '直达',
+        '营销广告',
+        '搜索引擎',
+        '邮件营销',
+        '联盟广告',
+        '视频广告',
+        '百度',
+        '谷歌',
+        '必应',
+        '其他'
+      ]
     },
     series: [
       {
@@ -205,9 +226,9 @@ export class EchartsComponent implements OnInit {
           }
         },
         data: [
-          {value: 335, name: '直达', selected: true},
-          {value: 679, name: '营销广告'},
-          {value: 1548, name: '搜索引擎'}
+          { value: 335, name: '直达', selected: true },
+          { value: 679, name: '营销广告' },
+          { value: 1548, name: '搜索引擎' }
         ]
       },
       {
@@ -216,19 +237,18 @@ export class EchartsComponent implements OnInit {
         radius: ['40%', '55%'],
 
         data: [
-          {value: 335, name: '直达'},
-          {value: 310, name: '邮件营销'},
-          {value: 234, name: '联盟广告'},
-          {value: 135, name: '视频广告'},
-          {value: 1048, name: '百度'},
-          {value: 251, name: '谷歌'},
-          {value: 147, name: '必应'},
-          {value: 102, name: '其他'}
+          { value: 335, name: '直达' },
+          { value: 310, name: '邮件营销' },
+          { value: 234, name: '联盟广告' },
+          { value: 135, name: '视频广告' },
+          { value: 1048, name: '百度' },
+          { value: 251, name: '谷歌' },
+          { value: 147, name: '必应' },
+          { value: 102, name: '其他' }
         ]
       }
     ]
-  }
-
+  };
 
   linkoption = {
     title: {
@@ -238,7 +258,8 @@ export class EchartsComponent implements OnInit {
     //气泡提示框，常用于展现更详细的数据
     tooltip: {
       trigger: 'axis',
-      axisPointer: { // 坐标轴指示器，坐标轴触发有效
+      axisPointer: {
+        // 坐标轴指示器，坐标轴触发有效
         type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
       }
     },
@@ -270,48 +291,52 @@ export class EchartsComponent implements OnInit {
       bottom: '3%',
       containLabel: true
     },
-    xAxis: [{
-      type: 'category',
-      data: [21231, 1212, 21231, 3213],
-      axisTick: {
-        alignWithLabel: true
-      },
-      axisLabel: {
-        interval: 0,
-        rotate: 20
-      },
-    }],
-    yAxis: [{
-      name: "懒猫今日访问量",
-      type: 'value'
-    }],
-    series: [{
-      name: '今日访问次数',
-      type: 'bar',
-      barWidth: '60%',
-      label: {
-        normal: {
-          show: true
+    xAxis: [
+      {
+        type: 'category',
+        data: [21231, 1212, 21231, 3213],
+        axisTick: {
+          alignWithLabel: true
+        },
+        axisLabel: {
+          interval: 0,
+          rotate: 20
         }
-      },
-      data: [21231, 1212, 21231, 3213]
-    }]
-  }
-
+      }
+    ],
+    yAxis: [
+      {
+        name: '懒猫今日访问量',
+        type: 'value'
+      }
+    ],
+    series: [
+      {
+        name: '今日访问次数',
+        type: 'bar',
+        barWidth: '60%',
+        label: {
+          normal: {
+            show: true
+          }
+        },
+        data: [21231, 1212, 21231, 3213]
+      }
+    ]
+  };
 
   datamapvalue = [
-    {name: '海门', value: [121.15, 31.89, 9]},
-    {name: '鄂尔多斯', value: [109.781327, 39.608266, 12]},
-    {name: '招远', value: [120.38, 37.35, 12]},
-    {name: '舟山', value: [122.207216, 29.985295, 12]},
-    {name: '齐齐哈尔', value: [123.97, 47.33, 14]},
-    {name: '盐城', value: [120.13, 33.38, 15]},
-    {name: '赤峰', value: [118.87, 42.28, 16]},
-    {name: '青岛', value: [120.33, 36.07, 18]},
-    {name: '乳山', value: [121.52, 36.89, 18]},
-    {name: '金昌', value: [102.188043, 38.520089, 19]}
+    { name: '海门', value: [121.15, 31.89, 9] },
+    { name: '鄂尔多斯', value: [109.781327, 39.608266, 12] },
+    { name: '招远', value: [120.38, 37.35, 12] },
+    { name: '舟山', value: [122.207216, 29.985295, 12] },
+    { name: '齐齐哈尔', value: [123.97, 47.33, 14] },
+    { name: '盐城', value: [120.13, 33.38, 15] },
+    { name: '赤峰', value: [118.87, 42.28, 16] },
+    { name: '青岛', value: [120.33, 36.07, 18] },
+    { name: '乳山', value: [121.52, 36.89, 18] },
+    { name: '金昌', value: [102.188043, 38.520089, 19] }
   ];
-
 
   mapoption = {
     backgroundColor: '#404a59',
@@ -360,7 +385,7 @@ export class EchartsComponent implements OnInit {
         type: 'scatter',
         coordinateSystem: 'geo',
         data: this.datamapvalue,
-        symbolSize: function (val) {
+        symbolSize: function(val) {
           return val[2] / 10;
         },
         label: {
@@ -406,5 +431,4 @@ export class EchartsComponent implements OnInit {
       e.registerMap('浙江', result);
     });
   }*/
-
 }
